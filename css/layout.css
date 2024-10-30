@@ -1,0 +1,86 @@
+aside {
+    border-right: 1px dashed var(--secondary-color);
+    padding: 2rem;
+    height: 100dvh;
+    
+    hr {
+        border-top: 1px dashed var(--secondary-color);
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        margin: 2rem 0;
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+
+    .small-nav-container {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+main {
+    padding: 2rem;
+    height: 100dvh;
+    overflow-y: scroll;
+
+    hr {
+        border-top: 1px dashed var(--secondary-color);
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        margin: 2rem 0;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    section {
+        &.hero {
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+
+            .hero-header-container {
+                display: flex;
+                justify-content: space-between;
+
+                .checkbox-toggle-container {
+                    --scale: 1;
+                  
+                    input[type=checkbox] {
+                        appearance: none;
+                        height: calc(26px * var(--scale));
+                        width: calc(48px * var(--scale));
+                        background: var(--secondary-color);
+                        border-radius: calc(26px * var(--scale));
+                        cursor: pointer;
+                        position: relative;
+                      
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 8%;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            height: calc(20px * var(--scale));
+                            width: calc(20px * var(--scale));
+                            background-color: var(--text-color);
+                            border-radius: 100%;
+                            transition: left 0.1s ease;
+                        }
+                      
+                        &:checked {
+                            &::before {
+                                left: calc(92% - calc(20px * var(--scale)));
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
