@@ -1,0 +1,20 @@
+@import 'variables.css';
+@import 'layout.css';
+@import 'typography.css';
+
+body {
+    font-family: 'Neue Montreal';
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 100dvh;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
