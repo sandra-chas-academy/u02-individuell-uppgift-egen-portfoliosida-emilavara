@@ -6,7 +6,7 @@
 h1, h2, h3, h4, h5, h6, p, a {
     margin: 0;
     padding: 0;
-    letter-spacing: -0.02em;
+    letter-spacing: normal;
 }
 
 h1 {
@@ -15,25 +15,52 @@ h1 {
     letter-spacing: -0.02em;
     font-style: normal;
     line-height: 1.25;
+
+    &.item-cell-title {
+        font-size: 24px;
+        font-weight: 500;
+    }
 }
 
 h2 {
     font-size: 24px;
     font-variation-settings: "wght" 600;
     letter-spacing: normal;
+
+    &.item-cell-subtitle {
+        font-size: 16px;
+        opacity: 0.25;
+        font-variation-settings: "wght" 400;
+    }
 }
 
 p {
     font-size: 20px;
     font-weight: 500;
 
+    &.small-text {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: normal;
+        color: var(--text-color);
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
     &.small-heading {
         text-transform: uppercase;
         font-size: 12px;
         letter-spacing: normal;
         color: var(--accent-color);
-        font-weight: 650;
+        font-weight: 500;
         margin-bottom: 4px;
+    }
+
+    &.item-cell-date {
+        font-size: 16px;
+        opacity: 0.25;
+        font-variation-settings: "wght" 400;
+
     }
 }
 
@@ -49,7 +76,7 @@ a {
         font-size: 12px;
         letter-spacing: normal;
         color: var(--text-color);
-        font-weight: 650;
+        font-weight: 500;
         position: relative;
         transition: text-shadow 0.2s ease;
 

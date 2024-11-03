@@ -18,6 +18,11 @@ aside {
         flex-direction: column;
         gap: 6px;
     }
+
+    .aside-footer-container {
+        position: fixed;
+        bottom: 2rem;
+    }
 }
 
 main {
@@ -81,6 +86,38 @@ main {
                 }
             }
 
+        }
+
+        &.portfolio {
+            /* border: 1px solid #202020; */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+
+            .item-cell {
+                /* background: var(--cell-color); */
+                border: 1px dashed red;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .image {
+                    min-height: 364px;
+                    border: 1px dashed blue;
+                }
+
+                .item-cell-info-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    padding: 0 8px;
+
+                    .item-title-date-container {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
         }
     }
 }
