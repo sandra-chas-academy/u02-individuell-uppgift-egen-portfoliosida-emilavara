@@ -1,6 +1,9 @@
 :root {
-    /* fonts */
-
     /* colors */
     --bg-color: #0a0a0a;
+    --dashed-border-color: #252525;
+
+    --btn-primary: #151515;
+
+    --text-accent: #454545;
 }

@@ -2,21 +2,46 @@
 @import './variables.css';
 @import './typography.css';
 @import './layout.css';
+@import './header.css';
+@import './footer.css';
+@import './buttons.css';
+@import './animations.css';
 @import './ea-grid.css';
 @import './utilities.css';
 
+/* secret rem scaling tech */
+/* html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+
+    @media (min-width: 1920px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 1250px) {
+        font-size: 1.28vw;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+    }
+} */
+
 body {
-    font-family: 'Inter Variable', sans-serif;
-    font-display: fallback;
+    font-family: "Inter Display";
     margin: 0;
     padding: 0;
     background-color: #0a0a0a;
     color: white;
 
-    div {
-        height: 20rem;
-        border: 1px solid red;
+    &::-webkit-scrollbar {
+        display: none;
     }
+}
+
+.mobile-nav-open {
+    overflow: hidden;
 }
 
 *, *::after, *::before {

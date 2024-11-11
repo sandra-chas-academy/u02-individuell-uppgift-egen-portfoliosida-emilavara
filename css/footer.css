@@ -1,0 +1,5 @@
+footer {
+    padding: 0 calc(50vw - 600px);
+    height: 64px;
+    border-top: 0.0625rem dashed var(--dashed-border-color);
+}

@@ -5,7 +5,12 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 /* headings */
 h1,.h1 {
+    font-size: 24px;
+    font-weight: 600;
 
+    @media (min-width: 768px) {
+        font-size: 28px;
+    }
 }
 
 h2,.h2 {
@@ -31,4 +36,15 @@ h6,.h6 {
 /* body text */
 p {
 
+}
+
+span {
+    &.accent-text {
+        color: var(--text-accent);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
