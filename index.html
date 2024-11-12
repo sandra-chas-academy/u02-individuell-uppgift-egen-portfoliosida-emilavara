@@ -6,13 +6,10 @@
     <title>Emil Avara &mdash; Front-end Developer & UI Designer</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="assets/images/me.webp">
+    <script src="src/components/header.js"></script>
 </head>
 <body>
-    <!-- <ea-header></ea-header> -->
-    <header>
-        <img class="me" src="assets/images/me.webp">
-        <button id="hamburgerBtn"></button>
-    </header>
+    <ea-header></ea-header>
     <main>
         <section class="hero">
             <h1>Hejsan, I'm a <span class="accent-text">Front End Developer</span> & <span class="accent-text">UI Designer</span> who cares about making beautiful things that help people.</h1>
@@ -22,6 +19,11 @@
                     <button class="ea-btn no-bg">About me</button>
                 </div>
             </div>
+        </section>
+        <section class="portfolio">
+            <div id="ea-portfolio-column-1" class="portfolio-column"></div>
+            <div id="ea-portfolio-column-2" class="portfolio-column"></div>
+            <div id="ea-portfolio-column-3" class="portfolio-column"></div>
         </section>
     </main>
     <ea-footer></ea-footer>

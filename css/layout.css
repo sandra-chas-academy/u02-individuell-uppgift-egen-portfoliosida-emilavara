@@ -4,23 +4,23 @@ main {
     
     @media (min-width: 768px) {
         &::before {
-            height: 100vh;
+            height: calc(100vh + 64px);
             width: 0;
             border-left: 1px dashed var(--dashed-border-color);
             content: "";
             left: calc(50vw - 600px);
             top: -64px;
-            position: absolute;
+            position: fixed;
         }
 
         &::after {
-            height: 100vh;
+            height: calc(100vh + 64px);
             width: 0;
             border-left: 1px dashed var(--dashed-border-color);
             content: "";
             right: calc(50vw - 600px);
             top: -64px;
-            position: absolute;
+            position: fixed;
         }
     }
 }
@@ -32,8 +32,8 @@ section {
 
     &.hero {
         height: auto;
-        padding-top: 64px;
-        padding-bottom: 64px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -64,6 +64,53 @@ section {
             .social-links {
                 display: flex;
                 gap: 8px;
+            }
+        }
+    }
+
+    &.portfolio {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        border-top: 1px dashed var(--dashed-border-color);
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        .portfolio-column {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+
+            @media (min-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                width: 33%;
+            }
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            
+            .portfolio-item-image-container {
+                width: 100%;
+                height: 12rem;
+                background: var(--btn-primary);
+                border-radius: 16px;
+                
+            }
+
+            .text-container {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 8px;
             }
         }
     }
