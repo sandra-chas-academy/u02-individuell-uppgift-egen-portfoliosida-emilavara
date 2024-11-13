@@ -9,7 +9,7 @@ let portfolio = [
     {
         name: 'Wewoosh',
         thumbnailType: 'image',
-        thumbnailSrc: 'placeholder.webp',
+        thumbnailSrc: '../assets/images/placeholder.webp',
         thumbnailHeight: 222,
         url: '/',
         year: '2021 - 2023',
@@ -29,7 +29,7 @@ let portfolio = [
     {
         name: 'Manaforge',
         thumbnailType: 'image',
-        thumbnailSrc: 'placeholder.webp',
+        thumbnailSrc: '../assets/images/placeholder.webp',
         thumbnailHeight: 196,
         url: '/',
         year: '2024',
@@ -39,7 +39,7 @@ let portfolio = [
     {
         name: 'Donedot',
         thumbnailType: 'image',
-        thumbnailSrc: 'placeholder.webp',
+        thumbnailSrc: '../assets/images/placeholder.webp',
         thumbnailHeight: 196,
         url: '/',
         year: '2024',
@@ -49,7 +49,7 @@ let portfolio = [
     {
         name: 'Hermitage',
         thumbnailType: 'image',
-        thumbnailSrc: 'placeholder.webp',
+        thumbnailSrc: '../assets/images/placeholder.webp',
         thumbnailHeight: 196,
         url: '/',
         year: '2024',
@@ -59,7 +59,7 @@ let portfolio = [
     {
         name: 'Createweb',
         thumbnailType: 'image',
-        thumbnailSrc: 'placeholder.webp',
+        thumbnailSrc: '../assets/images/placeholder.webp',
         thumbnailHeight: 196,
         url: '/',
         year: '2024',
@@ -89,11 +89,11 @@ async function fetchRepos() {
                     return 'image'
                 }
             })(),
-            thumbnailSrc: (() => {
+            thumbnailSrc: (() => { //smexy little iffy
                 if (repo.name === 'yet_another_todo_list') {
                     return '../assets/videos/to-do-list-animation.mp4'
                 } else {
-                    return repo.name + '.webp'
+                    return '../assets/images/' + repo.name + '.webp'
                 }
             })(),
             thumbnailHeight: (() => { 
@@ -143,6 +143,7 @@ async function render() {
         //check if thumbnail is image
         if (item.thumbnailType === 'image') {
             const elemImage = document.createElement('img')
+            elemImage.src = item.thumbnailSrc
             elemImageContainer.append(elemImage)
         }
 
