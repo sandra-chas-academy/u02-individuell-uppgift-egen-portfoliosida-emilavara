@@ -11,11 +11,15 @@ header {
     background: #0a0a0ae8;
     backdrop-filter: blur(64px);
     z-index: 1;
-    transition: top 0.2s ease;
+    transition: transform 0.2s ease;
+    
+    &.scrolled {
+        transform: translateY(-64px)
+    }
 
     @media (min-width: 768px) {
         padding: 0 calc(50vw - 584px);
-        transition: top 0.4s ease;
+        transition: transform 0.4s ease;
     }
 
     button {

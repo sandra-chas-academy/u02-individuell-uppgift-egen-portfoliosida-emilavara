@@ -5,16 +5,16 @@ import { MobileNav } from './components/mobilenav.js'
 window.customElements.define('ea-footer', Footer)
 window.customElements.define('ea-nav-mobile', MobileNav)
 
-//APNG is the way for the thumbnail d00d
-
 let portfolio = [
     {
         name: 'Wewoosh',
         thumbnailType: 'image',
         thumbnailSrc: 'placeholder.webp',
-        thumbnailHeight: 196,
+        thumbnailHeight: 222,
         url: '/',
-        year: '2021 - 2023'
+        year: '2021 - 2023',
+        class: 'wewoosh',
+        outbound: false
     },
     {
         name: 'Suniai Oliva',
@@ -22,7 +22,9 @@ let portfolio = [
         thumbnailSrc: '../assets/videos/suniai-oliva-animation.mp4',
         thumbnailHeight: 312,
         url: '/',
-        year: '2023'
+        year: '2023',
+        class: 'suniai-oliva',
+        outbound: false
     },
     {
         name: 'Manaforge',
@@ -31,6 +33,8 @@ let portfolio = [
         thumbnailHeight: 196,
         url: '/',
         year: '2024',
+        class: 'manaforge',
+        outbound: false
     },
     {
         name: 'Donedot',
@@ -38,7 +42,9 @@ let portfolio = [
         thumbnailSrc: 'placeholder.webp',
         thumbnailHeight: 196,
         url: '/',
-        year: '2024'
+        year: '2024',
+        class: 'donedot',
+        outbound: false
     },
     {
         name: 'Hermitage',
@@ -46,7 +52,9 @@ let portfolio = [
         thumbnailSrc: 'placeholder.webp',
         thumbnailHeight: 196,
         url: '/',
-        year: '2024'
+        year: '2024',
+        class: 'hermitage',
+        outbound: false
     },
     {
         name: 'Createweb',
@@ -54,7 +62,9 @@ let portfolio = [
         thumbnailSrc: 'placeholder.webp',
         thumbnailHeight: 196,
         url: '/',
-        year: '2024'
+        year: '2024',
+        class: 'createweb',
+        outbound: false
     }
 ]
 
@@ -72,11 +82,31 @@ async function fetchRepos() {
     repos.forEach((repo) => {
         let objToAdd = {
             name: repo.name,
-            thumbnailType: 'image',
-            thumbnailSrc: repo.name + '.webp',
-            thumbnailHeight: 196,
+            thumbnailType: (() => { //smexy iffy
+                if (repo.name === 'yet_another_todo_list') {
+                    return 'video'
+                } else {
+                    return 'image'
+                }
+            })(),
+            thumbnailSrc: (() => {
+                if (repo.name === 'yet_another_todo_list') {
+                    return '../assets/videos/to-do-list-animation.mp4'
+                } else {
+                    return repo.name + '.webp'
+                }
+            })(),
+            thumbnailHeight: (() => { 
+                if (repo.name === 'yet_another_todo_list') {
+                    return 282
+                } else {
+                    return 222
+                }
+            })(),
             url: repo.html_url,
-            year: repo.created_at.slice(0, 4)
+            year: repo.created_at.slice(0, 4),
+            class: repo.name,
+            outbound: true
         }
 
         portfolio.push(objToAdd)
@@ -101,31 +131,22 @@ async function render() {
         const columnIndex = index % columns.length;
         const column = columns[columnIndex];
 
-        // projectElement.innerHTML = `
-        //     <article class="portfolio-item">
-        //         <div style="height: ${item.thumbnailHeight}px" class="portfolio-item-image-container"></div>
-        //         <div class="text-container">
-        //             <a href="${item.url}" target="_blank">
-        //                 <h2 class="">${item.name}</h2>
-        //             </a>
-        //             <p class="portfolio-item-date-text">${item.year}</p>
-        //         </div>
-        //     </article>
-        // `
-
         const elemArticle = document.createElement('article')
         elemArticle.classList.add('portfolio-item')
+        elemArticle.classList.add(item.class.toLowerCase())
         
         const elemImageContainer = document.createElement('div');
         elemImageContainer.classList.add('portfolio-item-image-container');
         elemImageContainer.style.height = item.thumbnailHeight + "px"
         elemArticle.append(elemImageContainer);
 
+        //check if thumbnail is image
         if (item.thumbnailType === 'image') {
             const elemImage = document.createElement('img')
             elemImageContainer.append(elemImage)
         }
 
+        //check if thumbnail is image
         if (item.thumbnailType === 'video') {
             const elemVideo = document.createElement('video');
             elemVideo.src = item.thumbnailSrc;
@@ -135,13 +156,16 @@ async function render() {
             elemVideo.playsInline = true;
             elemImageContainer.append(elemVideo)
         }
-
+        
         const elemTextContainer = document.createElement('div')
         elemTextContainer.classList.add('text-container')
 
         //portfolio item paragraph
         const elemA = document.createElement('a')
         elemA.href = item.url
+        if (item.outbound) {
+            elemA.target = "_blank";
+        }
         elemTextContainer.append(elemA)
         
         //portfolio item heading
@@ -154,13 +178,10 @@ async function render() {
         elemParagraph.classList.add('portfolio-item-date-text')
         elemParagraph.textContent = item.year
         elemTextContainer.append(elemParagraph)
-        
 
         elemArticle.append(elemTextContainer)
         column.appendChild(elemArticle)
     })
-
-    
 }
 
 //render portfolio
