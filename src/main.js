@@ -11,36 +11,40 @@ let portfolio = [
     {
         name: 'Wewoosh',
         thumbnailType: 'image',
-        thumbnail: 'placeholder.webp',
+        thumbnailSrc: 'placeholder.webp',
+        thumbnailHeight: 196,
         url: '/',
         year: '2021 - 2023'
     },
     {
-        name: 'Manaforge',
-        thumbnailType: 'image',
-        thumbnail: 'placeholder.webp',
-        thumbnailHeight: 312,
-        url: '/',
-        year: '2024',
-    },
-    {
         name: 'Suniai Oliva',
-        thumbnailType: 'image',
-        thumbnail: 'placeholder.webp',
+        thumbnailType: 'video',
+        thumbnailSrc: '../assets/videos/suniai-oliva-animation.mp4',
+        thumbnailHeight: 312,
         url: '/',
         year: '2023'
     },
     {
+        name: 'Manaforge',
+        thumbnailType: 'image',
+        thumbnailSrc: 'placeholder.webp',
+        thumbnailHeight: 196,
+        url: '/',
+        year: '2024',
+    },
+    {
         name: 'Donedot',
         thumbnailType: 'image',
-        thumbnail: 'placeholder.webp',
+        thumbnailSrc: 'placeholder.webp',
+        thumbnailHeight: 196,
         url: '/',
         year: '2024'
     },
     {
         name: 'Hermitage',
         thumbnailType: 'image',
-        thumbnail: 'placeholder.webp',
+        thumbnailSrc: 'placeholder.webp',
+        thumbnailHeight: 196,
         url: '/',
         year: '2024'
     }
@@ -61,13 +65,13 @@ async function fetchRepos() {
         let objToAdd = {
             name: repo.name,
             thumbnailType: 'image',
-            thumbnail: 'placeholder.wepb',
+            thumbnailSrc: 'placeholder.wepb',
+            thumbnailHeight: 196,
             url: repo.html_url,
-            year: repo.created_at.slice(0, 4),
-            thumbnailHeight: 196
+            year: repo.created_at.slice(0, 4)
         }
 
-        portfolio.push(objToAdd)
+        // portfolio.push(objToAdd)
     })
 }
 
@@ -89,20 +93,65 @@ async function render() {
         const columnIndex = index % columns.length;
         const column = columns[columnIndex];
 
-        const projectElement = document.createElement('div');
-        projectElement.innerHTML = `
-            <article class="portfolio-item">
-                <div style="height: ${item.thumbnailHeight}px" class="portfolio-item-image-container"></div>
-                <div class="text-container">
-                    <a href="${item.url}" target="_blank">
-                        <h2 class="">${item.name}</h2>
-                    </a>
-                    <p class="portfolio-item-date-text">${item.year}</p>
-                </div>
-            </article>
-        `
-        column.appendChild(projectElement)
+        // projectElement.innerHTML = `
+        //     <article class="portfolio-item">
+        //         <div style="height: ${item.thumbnailHeight}px" class="portfolio-item-image-container"></div>
+        //         <div class="text-container">
+        //             <a href="${item.url}" target="_blank">
+        //                 <h2 class="">${item.name}</h2>
+        //             </a>
+        //             <p class="portfolio-item-date-text">${item.year}</p>
+        //         </div>
+        //     </article>
+        // `
+
+        const elemArticle = document.createElement('article')
+        elemArticle.classList.add('portfolio-item')
+        
+        const elemImageContainer = document.createElement('div');
+        elemImageContainer.classList.add('portfolio-item-image-container');
+        elemImageContainer.style.height = item.thumbnailHeight + "px"
+        elemArticle.append(elemImageContainer);
+
+        if (item.thumbnailType === 'image') {
+            const elemImage = document.createElement('img')
+            elemImageContainer.append(elemImage)
+        }
+
+        if (item.thumbnailType === 'video') {
+            const elemVideo = document.createElement('video');
+            elemVideo.src = item.thumbnailSrc;
+            elemVideo.autoplay = true;
+            elemVideo.muted = true;
+            elemVideo.loop = true;
+            elemImageContainer.append(elemVideo)
+        }
+
+        const elemTextContainer = document.createElement('div')
+        elemTextContainer.classList.add('text-container')
+
+        //portfolio item paragraph
+        const elemA = document.createElement('a')
+        elemA.href = item.url
+        elemTextContainer.append(elemA)
+        
+        //portfolio item heading
+        const elemHeading = document.createElement('h2');
+        elemHeading.textContent = item.name
+        elemA.append(elemHeading)
+
+        //portfolio item paragraph
+        const elemParagraph = document.createElement('p')
+        elemParagraph.classList.add('portfolio-item-date-text')
+        elemParagraph.textContent = item.year
+        elemTextContainer.append(elemParagraph)
+        
+
+        elemArticle.append(elemTextContainer)
+        column.appendChild(elemArticle)
     })
+
+    
 }
 
 //render portfolio
