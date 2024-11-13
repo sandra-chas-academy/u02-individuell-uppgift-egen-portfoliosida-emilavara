@@ -1,5 +1,16 @@
 footer {
-    padding: 0 calc(50vw - 600px);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 calc(50vw - 684px);
     height: 64px;
-    /* border-top: 0.0625rem dashed var(--dashed-border-color); */
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-color);
+    border-top: 0.0625rem dashed var(--dashed-border-color);
+
+    p {
+        font-size: 14px;
+        font-weight: 600;
+    }
 }

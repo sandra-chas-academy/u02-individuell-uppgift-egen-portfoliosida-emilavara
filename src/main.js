@@ -9,7 +9,7 @@ let portfolio = [
     {
         name: 'Wewoosh',
         thumbnailType: 'image',
-        thumbnailSrc: '../assets/images/placeholder.webp',
+        thumbnailSrc: '../assets/images/wewoosh.png',
         thumbnailHeight: 222,
         url: '/',
         year: '2021 - 2023',
@@ -96,13 +96,6 @@ async function fetchRepos() {
                     return '../assets/images/' + repo.name + '.webp'
                 }
             })(),
-            thumbnailHeight: (() => { 
-                if (repo.name === 'yet_another_todo_list') {
-                    return 282
-                } else {
-                    return 222
-                }
-            })(),
             url: repo.html_url,
             year: repo.created_at.slice(0, 4),
             class: repo.name,
@@ -137,7 +130,7 @@ async function render() {
         
         const elemImageContainer = document.createElement('div');
         elemImageContainer.classList.add('portfolio-item-image-container');
-        elemImageContainer.style.height = item.thumbnailHeight + "px"
+        // elemImageContainer.style.height = item.thumbnailHeight + "px"
         elemArticle.append(elemImageContainer);
 
         //check if thumbnail is image
