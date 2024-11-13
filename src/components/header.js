@@ -5,6 +5,15 @@ class Header extends HTMLElement {
         this.innerHTML = `
             <header>
                 <img class="me" src="assets/images/me.webp">
+                <div class="desktop-nav-container">
+                    <nav>
+                        <a class="desktop-nav-link active" href="">Intro</a>
+                        <a class="desktop-nav-link" href="">Portfolio</a>
+                        <a class="desktop-nav-link" href="">About</a>
+                        <a class="desktop-nav-link" href="">Contact</a>
+                    </nav>
+                </div>
+                <a href="#" class="ea-btn primary small contact-btn-desktop">Get in touch</a>
                 <button id="hamburgerBtn"></button>
             </header>
         `
@@ -20,28 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('html').classList.toggle('mobile-nav-open');
     })
 
-    var prevScrollpos = window.scrollY;
+    //hide header on scroll
+    let prevScrollpos = window.scrollY;
+    let header = document.querySelector("header");
 
-    /* Get the header element and it's position */
-    var header = document.querySelector("header");
-    var headerBottom = header.offsetTop + header.offsetHeight;
+    window.addEventListener('scroll', () => {
+        var currentScrollPos = window.scrollY;
 
-    window.onscroll = function() {
-    var currentScrollPos = window.scrollY;
+        if (prevScrollpos <= currentScrollPos ){
+            header.classList.add("scrolled");
+        } else{  
+            header.classList.remove("scrolled");
+        }
 
-    /* if scrolling down, let it scroll out of view as normal */
-    if (prevScrollpos <= currentScrollPos ){
-        header.classList.add("scrolled");
-    }
-    /* otherwise if we're scrolling up, fix the nav to the top */
-    else{  
-        header.classList.remove("scrolled");
-    }
-
-    prevScrollpos = currentScrollPos;
-    }
+        prevScrollpos = currentScrollPos;
+    })
 })
 
 //render component
 window.customElements.define('ea-header', Header)
-

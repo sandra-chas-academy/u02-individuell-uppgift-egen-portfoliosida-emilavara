@@ -22,6 +22,19 @@ header {
         transition: transform 0.4s ease;
     }
 
+    .desktop-nav-container {
+        display: none;
+        
+        @media (min-width: 768px) {
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+    }
+
     button {
         all: unset;
         height: 32px;

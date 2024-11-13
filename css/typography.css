@@ -53,4 +53,31 @@ span {
 a {
     text-decoration: none;
     color: inherit;
+
+    &.desktop-nav-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-accent);
+        position: relative;
+        transition: 0.2s ease;
+
+        &:hover {
+            color: white;
+        }
+
+        &.active {
+            color: white;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                height: 2px;
+                width: 2px;
+                left: calc(50% - 1px);
+                border-radius: 100%;
+                background-color: white;
+            }
+        }
+    }
 }

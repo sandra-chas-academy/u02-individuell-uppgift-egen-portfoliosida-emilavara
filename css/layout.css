@@ -105,14 +105,17 @@ section {
                 background: var(--btn-primary);
                 border-radius: 16px;
                 overflow: hidden;
-                border: 1px solid #202020;
+                /* border: 1px solid #202020; */
+
+                &.suniai-oliva {
+                    background-color: #F3EFEB;
+                }
 
                 img, video {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
-                }
-                
+                }   
             }
 
             .text-container {
