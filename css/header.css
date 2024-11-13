@@ -8,18 +8,20 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--bg-color);
+    background: #0a0a0ae8;
+    backdrop-filter: blur(64px);
     z-index: 1;
+    transition: top 0.2s ease;
 
     @media (min-width: 768px) {
         padding: 0 calc(50vw - 584px);
+        transition: top 0.4s ease;
     }
 
     button {
         all: unset;
         height: 32px;
         width: 32px;
-        background: #0a0a0a;
         position: relative;
         touch-action: manipulation;
     

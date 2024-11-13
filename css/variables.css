@@ -6,4 +6,6 @@
     --btn-primary: #151515;
 
     --text-accent: #454545;
+
+    overscroll-behavior: none;
 }

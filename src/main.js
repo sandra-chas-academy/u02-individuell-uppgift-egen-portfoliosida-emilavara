@@ -47,6 +47,14 @@ let portfolio = [
         thumbnailHeight: 196,
         url: '/',
         year: '2024'
+    },
+    {
+        name: 'Createweb',
+        thumbnailType: 'image',
+        thumbnailSrc: 'placeholder.webp',
+        thumbnailHeight: 196,
+        url: '/',
+        year: '2024'
     }
 ]
 
@@ -65,13 +73,13 @@ async function fetchRepos() {
         let objToAdd = {
             name: repo.name,
             thumbnailType: 'image',
-            thumbnailSrc: 'placeholder.wepb',
+            thumbnailSrc: repo.name + '.webp',
             thumbnailHeight: 196,
             url: repo.html_url,
             year: repo.created_at.slice(0, 4)
         }
 
-        // portfolio.push(objToAdd)
+        portfolio.push(objToAdd)
     })
 }
 
@@ -124,6 +132,7 @@ async function render() {
             elemVideo.autoplay = true;
             elemVideo.muted = true;
             elemVideo.loop = true;
+            elemVideo.playsInline = true;
             elemImageContainer.append(elemVideo)
         }
 
@@ -156,3 +165,8 @@ async function render() {
 
 //render portfolio
 render();
+
+//init the lenis library
+const lenis = new Lenis({
+    autoRaf: true,
+});
