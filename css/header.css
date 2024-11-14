@@ -12,6 +12,27 @@ header {
     backdrop-filter: blur(64px);
     z-index: 2;
     transition: transform 0.2s ease;
+
+    .container {
+        display: flex;
+        width: 50%;
+
+        &.left {
+
+        }
+
+        &.center {
+            justify-content: center;
+        }
+
+        &.right {
+            justify-content: flex-end;
+        }
+
+        @media (min-width: 768px) {
+            width: 33.33%;
+        }
+    }
     
     &.scrolled {
         transform: translateY(-64px)

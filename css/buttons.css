@@ -5,6 +5,7 @@
     padding: 12px 12px;
     border-radius: 12px;
     cursor: pointer;
+    width: fit-content;
 
     @media (min-width: 768px) {
         font-size: 16px;

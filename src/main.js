@@ -10,7 +10,6 @@ let portfolio = [
         name: 'Wewoosh',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/wewoosh.png',
-        thumbnailHeight: 222,
         url: '/',
         year: '2021 - 2023',
         class: 'wewoosh',
@@ -20,7 +19,6 @@ let portfolio = [
         name: 'Suniai Oliva',
         thumbnailType: 'video',
         thumbnailSrc: '../assets/videos/suniai-oliva-animation.mp4',
-        thumbnailHeight: 312,
         url: '/',
         year: '2023',
         class: 'suniai-oliva',
@@ -30,7 +28,6 @@ let portfolio = [
         name: 'Manaforge',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/placeholder.webp',
-        thumbnailHeight: 196,
         url: '/',
         year: '2024',
         class: 'manaforge',
@@ -40,7 +37,6 @@ let portfolio = [
         name: 'Donedot',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/placeholder.webp',
-        thumbnailHeight: 196,
         url: '/',
         year: '2024',
         class: 'donedot',
@@ -50,7 +46,6 @@ let portfolio = [
         name: 'Hermitage',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/placeholder.webp',
-        thumbnailHeight: 196,
         url: '/',
         year: '2024',
         class: 'hermitage',
@@ -60,7 +55,6 @@ let portfolio = [
         name: 'Createweb',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/placeholder.webp',
-        thumbnailHeight: 196,
         url: '/',
         year: '2024',
         class: 'createweb',
@@ -77,6 +71,8 @@ async function fetchRepos() {
     
     //set global var to res.data
     repos = data;
+
+    console.log(repos)
 
     //populate static portfolio object with results from github
     repos.forEach((repo) => {
