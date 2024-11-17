@@ -28,6 +28,51 @@
     }
 } */
 
+@view-transition {
+    navigation: auto;
+}
+
+@keyframes move-out {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes move-in {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+      }
+    
+      25% {
+        opacity: 1;
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+}
+
+/* Apply the custom animation to the old and new page states */
+::view-transition-old(root) {
+  animation: 1s ease-in-out both move-out;
+}
+
+::view-transition-new(root) {
+  animation: 1s ease-in-out both move-in;
+}
+
 html {
     background: var(--bg-color);
 }

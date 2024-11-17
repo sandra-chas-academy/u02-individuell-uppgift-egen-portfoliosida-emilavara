@@ -11,6 +11,7 @@ main {
             left: calc(50vw - 700px);
             top: -64px;
             position: fixed;
+            view-transition-name: main-left-line;
         }
 
         &::after {
@@ -21,7 +22,12 @@ main {
             right: calc(50vw - 700px);
             top: -64px;
             position: fixed;
+            view-transition-name: main-right-line;
         }
+    }
+
+    &.contact {
+        height: calc(100vh - 128px);
     }
 }
 
