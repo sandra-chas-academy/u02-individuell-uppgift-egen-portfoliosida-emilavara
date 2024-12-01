@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emil Avara &mdash; Front-end Developer & UI Designer</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.16/dist/lenis.css">
     <link rel="icon" href="assets/images/me.webp">
-    <script src="src/components/header.js"></script>
+    <script src="./src/components/header.js"></script>
     <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script> 
 </head>
 <body>
     <ea-header></ea-header>
-    <main>
+    <main class="intro">
         <section class="hero">
             <h1>Hejsan, I'm a <span class="accent-text">Front End Developer</span> & <span class="accent-text">UI Designer</span> who cares about making beautiful things that help people.</h1>
             <div class="button-and-social-container">
@@ -21,6 +21,7 @@
                     <button class="ea-btn no-bg">About me</button>
                 </div>
             </div>
+            <ea-social-links></ea-social-links>
         </section>
         <section class="portfolio">
             <div id="ea-portfolio-column-1" class="portfolio-column"></div>
@@ -30,6 +31,6 @@
     </main>
     <ea-footer></ea-footer>
     <ea-nav-mobile></ea-nav-mobile>
-    <script type="module" src="src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
 </body>
 </html>

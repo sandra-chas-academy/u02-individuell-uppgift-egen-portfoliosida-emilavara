@@ -5,7 +5,16 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 /* headings */
 h1,.h1 {
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 600;
+
+    @media (min-width: 768px) {
+        font-size: 36px;
+    }
+}
+
+h2,.h2 {
+    font-size: 22px;
     font-weight: 600;
 
     @media (min-width: 768px) {
@@ -13,29 +22,47 @@ h1,.h1 {
     }
 }
 
-h2,.h2 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
 h3,.h3 {
+    font-size: 20px;
+    font-weight: 600;
 
+    @media (min-width: 768px) {
+        font-size: 24px;
+    }
 }
 
 h4,.h4 {
+    font-size: 18px;
+    font-weight: 600;
 
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
 }
 
 h5,.h5 {
+    font-size: 16px;
+    font-weight: 600;
 
+    @media (min-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 h6,.h6 {
+    font-size: 14px;
+    font-weight: 600;
 
+    @media (min-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 /* body text */
 p {
+    font-size: 16px;
+    color: var(--body-text-color);
+    line-height: 1.50;
 
     &.portfolio-item-date-text {
         font-size: 11px;
@@ -80,4 +107,9 @@ a {
             }
         }
     }
+}
+
+.social-links-container {
+    display: flex;
+    gap: 8px;
 }

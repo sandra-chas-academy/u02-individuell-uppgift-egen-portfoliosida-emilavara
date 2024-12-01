@@ -1,0 +1,8 @@
+.divider-1 {
+    margin-bottom: 1rem;
+}
+
+.ea-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}

@@ -10,12 +10,7 @@ export class MobileNav extends HTMLElement {
                 </div>
                 <div class="button-and-social-container">
                     <button class="ea-btn primary">Get in touch</button>
-                    <div class="social-links">
-                        <div class="social-btn"></div>
-                        <div class="social-btn"></div>
-                        <div class="social-btn"></div>
-                        <div class="social-btn"></div>
-                    </div>
+                    <ea-social-links></ea-social-links>
                 </div>
                 <div class="bottom-line"></div>
             </nav>

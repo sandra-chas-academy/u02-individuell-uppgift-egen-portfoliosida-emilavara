@@ -14,7 +14,13 @@
     }
 
     &.primary {
-        background: var(--btn-primary);
+        background-color: var(--btn-primary);
+        transition: background-color 0.1s ease, color 0.1s ease;
+
+        &:hover {
+            color: black;
+            background-color: white;
+        }
     }
 
     &.no-bg {
@@ -28,11 +34,22 @@
 }
 
 .social-btn {
-    all: unset;
-    height: 32px;
-    width: 32px;
+    display: block;
+    height: 36px;
+    width: 36px;
     border: 1px solid var(--dashed-border-color);
-    border-radius: 8px;
+    border-radius: 12px;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+
+    &:hover {
+        background: white;
+        color: black;
+        border: 1px solid transparent;
+    }
 }
 
 .contact-btn-desktop {

@@ -1,9 +1,11 @@
 import { Footer } from './components/footer.js'
 import { MobileNav } from './components/mobilenav.js'
+import { SocialLinks } from './components/sociallinks.js'
 
 //mount components
 window.customElements.define('ea-footer', Footer)
 window.customElements.define('ea-nav-mobile', MobileNav)
+window.customElements.define('ea-social-links', SocialLinks)
 
 let portfolio = [
     {
@@ -27,7 +29,7 @@ let portfolio = [
     {
         name: 'Manaforge',
         thumbnailType: 'image',
-        thumbnailSrc: '../assets/images/placeholder.webp',
+        thumbnailSrc: '../assets/images/manaforge.png',
         url: '/',
         year: '2024',
         class: 'manaforge',
@@ -36,7 +38,7 @@ let portfolio = [
     {
         name: 'Donedot',
         thumbnailType: 'image',
-        thumbnailSrc: '../assets/images/placeholder.webp',
+        thumbnailSrc: '../assets/images/donedot.png',
         url: '/',
         year: '2024',
         class: 'donedot',
@@ -45,7 +47,7 @@ let portfolio = [
     {
         name: 'Hermitage',
         thumbnailType: 'image',
-        thumbnailSrc: '../assets/images/placeholder.webp',
+        thumbnailSrc: '../assets/images/hermitage.png',
         url: '/',
         year: '2024',
         class: 'hermitage',
@@ -54,7 +56,7 @@ let portfolio = [
     {
         name: 'Createweb',
         thumbnailType: 'image',
-        thumbnailSrc: '../assets/images/placeholder.webp',
+        thumbnailSrc: '../assets/images/createweb.png',
         url: '/',
         year: '2024',
         class: 'createweb',
@@ -66,7 +68,9 @@ let repos = []
 
 //fetch my repos from github
 async function fetchRepos() {
-    const res = await fetch('https://api.github.com/users/emilavara/repos')
+    const res = await fetch('https://api.github.com/users/emilavara/repos', {
+        headers: {Authorization: 'Bearer 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'}
+    })
     const data = await res.json();
     
     //set global var to res.data
@@ -85,7 +89,7 @@ async function fetchRepos() {
                     return 'image'
                 }
             })(),
-            thumbnailSrc: (() => { //smexy little iffy
+            thumbnailSrc: (() => { //another smexy little iffy
                 if (repo.name === 'yet_another_todo_list') {
                     return '../assets/videos/to-do-list-animation.mp4'
                 } else {
@@ -159,7 +163,7 @@ async function render() {
         elemTextContainer.append(elemA)
         
         //portfolio item heading
-        const elemHeading = document.createElement('h2');
+        const elemHeading = document.createElement('h5');
         elemHeading.textContent = item.name
         elemA.append(elemHeading)
 
@@ -174,8 +178,11 @@ async function render() {
     })
 }
 
-//render portfolio
-render();
+//render portfolio if on intro site
+if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    render();
+}
+
 
 //init the lenis library
 const lenis = new Lenis({

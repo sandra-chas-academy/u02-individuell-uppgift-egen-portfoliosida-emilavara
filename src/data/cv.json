@@ -1,0 +1,30 @@
+{
+    "education": [
+        {
+            "school": "Chas Academy",
+            "year": "2024 -",
+            "name": "Full Stack Development",
+            "description": "Currently studying Full Stack web development in Stockholm. With JavaScript as a main focus."
+        },
+        {
+            "school": "JENSENs Yrkeshögskola",
+            "year": "2020 - 2022",
+            "name": "Front End Development",
+            "description": "Here I studied Front End Development with a bit of web security thrown in there."
+        }
+    ],
+    "experiences": [
+        {
+            "type": "Development",
+            "year": "2022 - 2024",
+            "name": "Wewoosh",
+            "description": "Wewoosh was a subsidiary of Les Creatives where we sold our services through the Wewoosh platform."
+        },
+        {
+            "type": "Design",
+            "year": "2021 - 2024",
+            "name": "Les Creatives",
+            "description": "Les Creatives is communications agency. It all started with an internship, that went over to a full time position."
+        }
+    ]
+}
