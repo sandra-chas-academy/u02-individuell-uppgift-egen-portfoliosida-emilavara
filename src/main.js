@@ -12,7 +12,7 @@ let portfolio = [
         name: 'Wewoosh',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/wewoosh.png',
-        url: '/',
+        url: '/portfolio/wewoosh.html',
         year: '2021 - 2023',
         class: 'wewoosh',
         outbound: false
@@ -21,16 +21,16 @@ let portfolio = [
         name: 'Suniai Oliva',
         thumbnailType: 'video',
         thumbnailSrc: '../assets/videos/suniai-oliva-animation.mp4',
-        url: '/',
+        url: 'https://suniaioliva.com',
         year: '2023',
         class: 'suniai-oliva',
-        outbound: false
+        outbound: true
     },
     {
         name: 'Manaforge',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/manaforge.png',
-        url: '/',
+        url: 'none',
         year: '2024',
         class: 'manaforge',
         outbound: false
@@ -39,7 +39,7 @@ let portfolio = [
         name: 'Donedot',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/donedot.png',
-        url: '/',
+        url: 'none',
         year: '2024',
         class: 'donedot',
         outbound: false
@@ -48,7 +48,7 @@ let portfolio = [
         name: 'Hermitage',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/hermitage.png',
-        url: '/',
+        url: 'none',
         year: '2024',
         class: 'hermitage',
         outbound: false
@@ -57,7 +57,7 @@ let portfolio = [
         name: 'Createweb',
         thumbnailType: 'image',
         thumbnailSrc: '../assets/images/createweb.png',
-        url: '/',
+        url: 'none',
         year: '2024',
         class: 'createweb',
         outbound: false
@@ -69,7 +69,7 @@ let repos = []
 //fetch my repos from github
 async function fetchRepos() {
     const res = await fetch('https://api.github.com/users/emilavara/repos', {
-        headers: {Authorization: 'Bearer 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'}
+        
     })
     const data = await res.json();
     
@@ -124,7 +124,7 @@ async function render() {
         const columnIndex = index % columns.length;
         const column = columns[columnIndex];
 
-        const elemArticle = document.createElement('article')
+        const elemArticle = document.createElement('a')
         elemArticle.classList.add('portfolio-item')
         elemArticle.classList.add(item.class.toLowerCase())
         
@@ -157,14 +157,38 @@ async function render() {
         //portfolio item paragraph
         const elemA = document.createElement('a')
         elemA.href = item.url
+        elemArticle.href = item.url
+        
         if (item.outbound) {
             elemA.target = "_blank";
+            elemArticle.target = "_blank"
         }
+
+        //if portfolio item is not a link remove the href attribute
+        if (item.url === 'none') {
+            elemA.removeAttribute('href')
+            elemArticle.removeAttribute('href')
+        }
+
         elemTextContainer.append(elemA)
         
         //portfolio item heading
         const elemHeading = document.createElement('h5');
+        const elemIcon = document.createElement('i');
+        if (item.outbound == false) {
+            elemIcon.className = 'bi bi-arrow-right'
+        } else {
+            elemIcon.className = 'bi bi-arrow-up-right'
+        }
+
+        if (item.url === 'none') {
+            elemIcon.className = ''
+        }
+
+
         elemHeading.textContent = item.name
+        elemHeading.append(elemIcon)
+
         elemA.append(elemHeading)
 
         //portfolio item paragraph

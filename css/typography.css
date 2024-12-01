@@ -5,67 +5,67 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 /* headings */
 h1,.h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 600;
 
     @media (min-width: 768px) {
-        font-size: 36px;
+        font-size: 2.25rem;
     }
 }
 
 h2,.h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 600;
 
     @media (min-width: 768px) {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 }
 
 h3,.h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
 
     @media (min-width: 768px) {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 }
 
 h4,.h4 {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
 
     @media (min-width: 768px) {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 }
 
 h5,.h5 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
 
     @media (min-width: 768px) {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 }
 
 h6,.h6 {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
 
     @media (min-width: 768px) {
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 
 /* body text */
 p {
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--body-text-color);
     line-height: 1.50;
 
     &.portfolio-item-date-text {
-        font-size: 11px;
+        font-size: 0.6875rem;
         font-weight: 600;
         color: var(--text-accent);
     }
@@ -82,7 +82,7 @@ a {
     color: inherit;
 
     &.desktop-nav-link {
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 600;
         color: var(--text-accent);
         position: relative;
@@ -98,9 +98,9 @@ a {
             &::after {
                 content: "";
                 position: absolute;
-                bottom: -4px;
-                height: 2px;
-                width: 2px;
+                bottom: -0.25rem;
+                height: 0.125rem;
+                width: 0.125rem;
                 left: calc(50% - 1px);
                 border-radius: 100%;
                 background-color: white;
@@ -111,5 +111,5 @@ a {
 
 .social-links-container {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
 }

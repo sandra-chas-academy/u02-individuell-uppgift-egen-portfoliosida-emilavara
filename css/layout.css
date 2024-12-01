@@ -1,64 +1,86 @@
 main {
-    margin-top: 64px;
+    margin-top: 4rem;
     position: relative;
 
     &::before {
-        height: calc(100vh + 64px);
+        height: calc(100vh + 4rem);
         width: 0;
         border-left: 1px dashed var(--dashed-border-color);
         content: "";
-        left: 15px;
-        top: -64px;
+        left: 0.9375rem;
+        top: -4rem;
         position: fixed;
         view-transition-name: main-left-line;
     }
 
     &::after {
-        height: calc(100vh + 64px);
+        height: calc(100vh + 4rem);
         width: 0;
         border-left: 1px dashed var(--dashed-border-color);
         content: "";
-        right: 15px;
-        top: -64px;
+        right: 0.9375rem;
+        top: -4rem;
         position: fixed;
         view-transition-name: main-right-line;
     }
     
     @media (min-width: 768px) {
-    
         &::before {
-            height: calc(100vh + 64px);
+            height: calc(100vh + 4rem);
             width: 0;
             border-left: 1px dashed var(--dashed-border-color);
             content: "";
-            left: calc(50vw - 700px);
-            top: -64px;
+            left: calc(50vw - 43.75rem);
+            top: -4rem;
             position: fixed;
             view-transition-name: main-left-line;
         }
 
         &::after {
-            height: calc(100vh + 64px);
+            height: calc(100vh + 4rem);
             width: 0;
             border-left: 1px dashed var(--dashed-border-color);
             content: "";
-            right: calc(50vw - 700px);
-            top: -64px;
+            right: calc(50vw - 43.75rem);
+            top: -4rem;
             position: fixed;
             view-transition-name: main-right-line;
         }
-   
+    }
+
+    @media (min-width: 768px) and (max-width: 1464px) {
+        &::before {
+            height: calc(100vh + 4rem);
+            width: 0;
+            border-left: 1px dashed var(--dashed-border-color);
+            content: "";
+            top: -4rem;
+            left: 1rem;
+            position: fixed;
+            view-transition-name: main-left-line;
+        }
+
+        &::after {
+            height: calc(100vh + 4rem);
+            width: 0;
+            border-left: 1px dashed var(--dashed-border-color);
+            content: "";
+            right: 1rem;
+            top: -4rem;
+            position: fixed;
+            view-transition-name: main-right-line;
+        }
     }
 
     &.intro {
         section {
             &.hero {
                 h1 {
-                    font-size: 24px;
+                    font-size: 1.5rem;
                 }
                 @media (min-width: 768px) {
                     h1 {
-                        font-size: 28px;
+                        font-size: 1.75rem;
                     }
                 }
             }
@@ -68,10 +90,10 @@ main {
     &.about {
         section {
             &.hero {
-                height: 128px;
+                height: 8rem;
                 
                 @media (min-width: 768px) {
-                    height: 256px;
+                    height: 16rem;
                 }
                 position: relative;
             }
@@ -123,14 +145,14 @@ main {
 
                 .header {
                     border-top: 1px dashed var(--dashed-border-color);
-                    padding-top: 12px;
-                    font-size: 12px;
+                    padding-top: 0.75rem;
+                    font-size: 0.75rem;
                     text-transform: uppercase;
                     font-weight: 600;
                 }
 
                 .cv-card {
-                    padding: 24px;
+                    padding: 1.5rem;
                     background-color: #0d0d0d;
                     display: flex;
                     flex-direction: column;
@@ -148,16 +170,16 @@ main {
                     }
                     
                     .pill {
-                        font-size: 10.9px;
+                        font-size: 0.6813rem;
                         text-transform: uppercase;
                         font-weight: 600;
                         background-color: #1B1B1B;
-                        padding: 7px 12px;
+                        padding: 0.4375rem 0.75rem;
                         border-radius: 2rem;
                     }
 
                     .year {
-                        font-size: 12px;
+                        font-size: 0.75rem;
                         font-weight: 600;
                         opacity: 0.5;
                         margin-bottom: auto;
@@ -175,15 +197,15 @@ main {
     &.contact {
 
         @media (min-width: 768px) {
-            height: calc(100vh - 128px);
+            height: calc(100vh - 8rem);
         }
 
         section {
             &.hero {
-                height: 128px;
+                height: 8rem;
 
                 @media (min-width: 768px) {
-                    height: 256px;
+                    height: 16rem;
                 }
             }
 
@@ -275,22 +297,85 @@ main {
             }
         }
     }
+
+    &.portfolio {
+        &.wewoosh {
+            section {
+                &.hero {
+                    height: 11.875rem;
+
+                    @media (min-width: 768px) {
+                        height: 22.8125rem;
+                    }
+                    position: relative;
+
+                    img {
+                        width: 250px;
+
+                        @media (min-width: 768px) {
+                            width: 31.8125rem;
+                        }
+                    }
+                }
+
+                &.wewoosh-content {
+                    padding-top: 2rem;
+                    padding-bottom: 8rem;
+                    row-gap: 8rem;
+
+                    @media (min-width: 768px) {
+                        padding-top: 4rem;
+                        row-gap: 11.625rem;
+                    }
+
+                    .wewoosh-glaze {
+                        @media (min-width: 768px) {
+                            width: 60%;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                    }
+
+                    .wewoosh-main-ui-img{
+                        width: 100%;
+                    }
+
+                    .wewoosh-btsyw-img {
+                        width: 100%;
+                        margin-right: -2rem;
+
+                        @media (min-width: 768px) {
+                            margin-right: -4rem;
+                        }
+                    }
+
+                    .wewoosh-speed-img {
+                        width: 100%; 
+
+                        @media (min-width: 768px) {
+                            width: 46.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 section {
     max-width: 1400px;
     margin: auto;
-    padding: 0 32px;
+    padding: 0 2rem;
 
     &.hero {
         height: auto;
-        padding-top: 64px;
-        padding-bottom: 64px;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 32px;
+        gap: 2rem;
         position: relative;
 
         &::after {
@@ -306,8 +391,8 @@ section {
 
 
         @media (min-width: 768px) {
-            height: 486px;
-            gap: 44px;
+            height: 30.375rem;
+            gap: 2.75rem;
         }
 
         h1 {
@@ -315,7 +400,7 @@ section {
             text-wrap: pretty;
             
             @media (min-width: 768px) {
-                max-width: 756px;
+                max-width: 47.25rem;
             }
         }
         
@@ -324,11 +409,11 @@ section {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 32px;
+            gap: 2rem;
 
             .social-links {
                 display: flex;
-                gap: 8px;
+                gap: 0.5rem;
             }
         }
     }
@@ -336,40 +421,40 @@ section {
     &.portfolio {
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: 2rem;
         /* border-top: 1px dashed var(--dashed-border-color); */
-        padding-top: 32px;
-        padding-bottom: 32px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
 
         @media (min-width: 768px) {
             flex-direction: row;
-            padding-bottom: 128px;
+            padding-bottom: 8rem;
         }
 
         .portfolio-column {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 2rem;
             width: 100%;
 
             @media (min-width: 768px) {
                 display: flex;
                 flex-direction: column;
-                gap: 32px;
+                gap: 2rem;
                 width: 33%;
             }
         }
 
-        article {
+        a {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 0.75rem;
 
             .portfolio-item-image-container {
                 width: 100%;
-                height: 250px;
+                height: 15.625rem;
                 background: var(--btn-primary);
-                border-radius: 16px;
+                border-radius: 1rem;
                 overflow: hidden;
                 border: 1px solid #202020;
 
@@ -386,12 +471,25 @@ section {
             .text-container {
                 display: flex;
                 justify-content: space-between;
-                padding: 0 8px;
+                padding: 0 0.5rem;
+
+                h5 {
+                    i {
+                        font-size: 0.75rem;
+                        margin-left: 0.5rem;
+                        font-weight: 800;
+                        opacity: 0;
+                        transition: opacity 0.2s ease;
+                        transition-delay: 0.5s;
+
+                        
+                    }
+                }
             }
 
             &.wewoosh {
                 .portfolio-item-image-container {
-                    height: 300px;
+                    height: 18.75rem;
 
                     img {
                         object-position: bottom left;
@@ -401,14 +499,14 @@ section {
 
             &.suniai-oliva {
                 .portfolio-item-image-container {
-                    height: 422px;
+                    height: 26.375rem;
                     background-color: #F3EFEB;
                 }
             }
 
             &.yet_another_todo_list {
                 .portfolio-item-image-container {
-                    height: 282px;
+                    height: 17.625rem;
                 }
             }
 
@@ -416,6 +514,12 @@ section {
                 .portfolio-item-image-container {
                     img, video {
                         transform: scale(1.1);
+                    }
+                }
+
+                h5 {
+                    i {
+                        opacity: 0.50;
                     }
                 }
             }

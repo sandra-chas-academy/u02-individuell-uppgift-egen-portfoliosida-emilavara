@@ -10,72 +10,33 @@
 @import './utilities.css';
 
 /* secret rem scaling tech */
-html {
+/* html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
+    
+} */
+
+
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: var(--bg-color);
+	scroll-behavior: smooth;
+
+	font-size: 16px;
 
     @media (min-width: 1920px) {
         font-size: 16px;
     }
 
-    @media (max-width: 1250px) {
-        font-size: 1.28vw;
+    @media (max-width: 1464px) {
+        font-size: 1.09vw;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         font-size: 16px;
     }
-}
-
-@view-transition {
-    navigation: auto;
-}
-
-@keyframes move-out {
-  0% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(15%);
-  }
-}
-
-@keyframes move-in {
-    0% {
-        transform: translateY(15%);
-        opacity: 0;
-      }
-    
-      25% {
-        opacity: 1;
-      }
-    
-      100% {
-        opacity: 1;
-        transform: translateY(0%);
-      }
-}
-
-::view-transition-old(root) {
-  animation: 0.75s ease both move-out;
-}
-
-::view-transition-new(root) {
-  animation: 0.75s ease both move-in;
-}
-
-html {
-    background: var(--bg-color);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -112,4 +73,48 @@ body {
 
 *, *::after, *::before {
     box-sizing: border-box;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes move-out {
+0% {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+25% {
+  opacity: 0;
+}
+
+100% {
+  opacity: 0;
+  transform: translateY(15%);
+}
+}
+
+@keyframes move-in {
+  0% {
+      transform: translateY(15%);
+      opacity: 0;
+    }
+  
+    25% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+
+::view-transition-old(root) {
+animation: 0.75s ease both move-out;
+}
+
+::view-transition-new(root) {
+animation: 0.75s ease both move-in;
 }

@@ -1,6 +1,6 @@
 header {
-    padding: 0 32px;
-    height: 64px;
+    padding: 0 2rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +20,10 @@ header {
         width: 50%;
 
         &.left {
-
+            img {
+                height: 2rem;
+                width: 2rem;
+            }
         }
 
         &.center {
@@ -37,11 +40,11 @@ header {
     }
     
     &.scrolled {
-        transform: translateY(-64px)
+        transform: translateY(-4rem)
     }
 
     @media (min-width: 768px) {
-        padding: 0 calc(50vw - 684px);
+        padding: 0 calc(50vw - 42.75rem);
         transition: transform 0.4s ease;
     }
 
@@ -54,14 +57,14 @@ header {
 
         nav {
             display: flex;
-            gap: 32px;
+            gap: 2rem;
         }
     }
 
     button {
         all: unset;
-        height: 32px;
-        width: 32px;
+        height: 2rem;
+        width: 2rem;
         position: relative;
         touch-action: manipulation;
     
@@ -70,29 +73,29 @@ header {
             position: absolute;
             top: 0;
             width: 100%;
-            height: 2px;
+            height: 0.125rem;
             background: white;
             transition: all 0.2s ease;
             transform-origin: center center;
-            translate: 0 12px;
+            translate: 0 0.75rem;
         }
     
         &::before {
             top: 100%;
             /* bottom: 33%; */
-            translate: 0 -12px;
+            translate: 0 -0.75rem;
 
         }
     
         &.toggled {
             &::after {
                 rotate: -45deg;
-                translate: 0 16px;
+                translate: 0 1rem;
             }
             
             &::before {
                 rotate: 45deg;
-                translate: 0 -16px;
+                translate: 0 -1rem;
             }
         }
 
@@ -106,10 +109,10 @@ header {
 .mobile-nav {
     transform: translateX(100vw);
     width: 100%;
-    height: calc(100dvh - 64px);
+    height: calc(100dvh - 4rem);
     background: var(--bg-color);
     position: fixed;
-    top: 64px;
+    top: 4rem;
     left: 0;
     z-index: 1;
     transition: transform 0.2s ease;
@@ -117,7 +120,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 128px;
+    gap: 8rem;
 
     @media (min-width: 768px) {
         display: none;
@@ -128,7 +131,7 @@ header {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        gap: 32px;
+        gap: 2rem;
 
         a {
             text-align: center;
@@ -145,7 +148,7 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 32px;
+        gap: 2rem;
 
         button {
             width: fit-content;
@@ -153,7 +156,7 @@ header {
 
         .social-links {
             display: flex;
-            gap: 8px;
+            gap: 0.5rem;
         }
     }
 
@@ -161,7 +164,7 @@ header {
         width: 100%;
         height: 0;
         position: fixed;
-        bottom: 64px;
+        bottom: 4rem;
         border-bottom: 1px dashed var(--dashed-border-color);
     }
 

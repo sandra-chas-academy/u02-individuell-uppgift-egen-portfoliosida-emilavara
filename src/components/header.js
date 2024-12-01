@@ -5,13 +5,13 @@ class Header extends HTMLElement {
         this.innerHTML = `
             <header>
                 <div class="container left">
-                    <img class="me" src="assets/images/me.webp">
+                    <a href="/index.html"><img class="me" height="32" width="32" src="/assets/images/me.webp"></a>
                 </div>
                 <div class="container center">
                     <div class="desktop-nav-container">
                         <nav>
-                            <a class="desktop-nav-link" href="/" data-link-to="intro">Intro</a>
-                            <a class="desktop-nav-link" href="" data-link-to="/portfolio">Portfolio</a>
+                            <a class="desktop-nav-link" href="/index.html" data-link-to="intro">Intro</a>
+                            <a class="desktop-nav-link" href="/index.html#portfolio" data-link-to="/portfolio/wewoosh.html">Portfolio</a>
                             <a class="desktop-nav-link" href="/about.html" data-link-to="/about.html">About</a>
                             <a class="desktop-nav-link" href="/contact.html" data-link-to="/contact.html">Contact</a>
                         </nav>
@@ -19,7 +19,7 @@ class Header extends HTMLElement {
                 </div>
                 
                 <div class="container right">
-                    <a href="#" class="ea-btn primary small contact-btn-desktop">Get in touch</a>
+                    <a href="/contact.html" class="ea-btn primary small contact-btn-desktop">Get in touch</a>
                     <button id="hamburgerBtn"></button>
                 </div>
             </header>
@@ -30,24 +30,31 @@ class Header extends HTMLElement {
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const desktopNavLinks = document.querySelectorAll('.desktop-nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link')
 
-    if (window.location.pathname === '/') {
-        desktopNavLinks[0].classList.add('active')
-    }
-
+    //add active class to desktop nav links
     desktopNavLinks.forEach((link) => {
-        console.log(window.location)
-
-        // console.log(window.location.pathname)
-
-        if (window.location.pathname === link.dataset.linkTo) {
+        if (window.location.href === link.href) {
             link.classList.add('active')
         }
-        
     })
 
-    console.log(desktopNavLinks)
+    if (window.location.pathname === '/portfolio/wewoosh.html') {
+        desktopNavLinks[1].classList.add('active');
+    }
 
+    //add active class to mobile nav links
+    mobileNavLinks.forEach((link) => {
+        if (window.location.href === link.href) {
+            link.classList.add('active')
+        }
+    })
+
+    if (window.location.pathname === '/portfolio/wewoosh.html') {
+        mobileNavLinks[1].classList.add('active');
+    }
+
+    //toggle mobile nav bar
     hamburgerBtn.addEventListener('click', () => {
         hamburgerBtn.classList.toggle('toggled');
         document.getElementById('mobile-nav').classList.toggle('open');
