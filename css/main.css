@@ -1,30 +1,21 @@
-@import './fonts.css';
-@import './variables.css';
-@import './typography.css';
-@import './layout.css';
-@import './header.css';
-@import './footer.css';
-@import './buttons.css';
-@import './animations.css';
-@import './ea-grid.css';
-@import './utilities.css';
-
-/* secret rem scaling tech */
-/* html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    
-} */
-
-
+@import "./fonts.css";
+@import "./variables.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./buttons.css";
+@import "./animations.css";
+@import "./ea-grid.css";
+@import "./utilities.css";
 
 html {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background: var(--bg-color);
-	scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-color);
+    scroll-behavior: smooth;
 
-	font-size: 16px;
+    font-size: 16px;
 
     @media (min-width: 1920px) {
         font-size: 16px;
@@ -46,75 +37,62 @@ body {
     background-color: #0a0a0a;
     color: white;
     position: relative;
-    /* animation: blur 0.675s ease-in-out; */
 
     &::-webkit-scrollbar {
         display: none;
     }
-
-    /* &::before {
-        height: 100vh;
-        width: 100vw;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        background: rgba(10, 10, 10, 0.01);
-        content: "";
-        animation: blur 0.675s ease-in-out forwards;
-        backdrop-filter: blur(16px);
-        pointer-events: none;
-    } */
 }
 
 .mobile-nav-open {
     overflow: hidden;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
 @view-transition {
-  navigation: auto;
+    navigation: auto;
 }
 
 @keyframes move-out {
-0% {
-  transform: translateY(0%);
-  opacity: 1;
-}
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
 
-25% {
-  opacity: 0;
-}
+    25% {
+        opacity: 0;
+    }
 
-100% {
-  opacity: 0;
-  transform: translateY(15%);
-}
+    100% {
+        opacity: 0;
+        transform: translateY(15%);
+    }
 }
 
 @keyframes move-in {
-  0% {
-      transform: translateY(15%);
-      opacity: 0;
+    0% {
+        transform: translateY(15%);
+        opacity: 0;
     }
-  
+
     25% {
-      opacity: 1;
+        opacity: 1;
     }
-  
+
     100% {
-      opacity: 1;
-      transform: translateY(0%);
+        opacity: 1;
+        transform: translateY(0%);
     }
 }
 
 ::view-transition-old(root) {
-animation: 0.75s ease both move-out;
+    animation: 0.75s ease both move-out;
 }
 
 ::view-transition-new(root) {
-animation: 0.75s ease both move-in;
+    animation: 0.75s ease both move-in;
 }

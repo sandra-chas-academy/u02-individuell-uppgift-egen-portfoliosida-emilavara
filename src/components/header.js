@@ -5,7 +5,7 @@ class Header extends HTMLElement {
         this.innerHTML = `
             <header>
                 <div class="container left">
-                    <a href="/index.html"><img class="me" height="32" width="32" src="/assets/images/me.webp"></a>
+                    <a href="/index.html" aria-label="Link back to first page"><img class="me" height="32" width="32" alt="Me" src="/assets/images/me.webp"></a>
                 </div>
                 <div class="container center">
                     <div class="desktop-nav-container">
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const desktopNavLinks = document.querySelectorAll('.desktop-nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link')
+    const mobilePortfolioLink = document.getElementById('mobile-portfolio-link')
 
     //add active class to desktop nav links
     desktopNavLinks.forEach((link) => {
@@ -43,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         desktopNavLinks[1].classList.add('active');
     }
 
+    if (window.location.pathname === '/') {
+        desktopNavLinks[0].classList.add('active');
+    }
+
     //add active class to mobile nav links
     mobileNavLinks.forEach((link) => {
         if (window.location.href === link.href) {
@@ -50,12 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    if (window.location.pathname === '/') {
+        mobileNavLinks[0].classList.add('active');
+    }
+
     if (window.location.pathname === '/portfolio/wewoosh.html') {
         mobileNavLinks[1].classList.add('active');
     }
 
     //toggle mobile nav bar
     hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('toggled');
+        document.getElementById('mobile-nav').classList.toggle('open');
+        document.querySelector('html').classList.toggle('mobile-nav-open');
+    })
+
+    mobilePortfolioLink.addEventListener('click', () => {
         hamburgerBtn.classList.toggle('toggled');
         document.getElementById('mobile-nav').classList.toggle('open');
         document.querySelector('html').classList.toggle('mobile-nav-open');

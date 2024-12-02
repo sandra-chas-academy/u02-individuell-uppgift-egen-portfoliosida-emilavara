@@ -4,7 +4,7 @@ export class MobileNav extends HTMLElement {
             <nav id="mobile-nav" class="mobile-nav">
                 <div class="mobile-nav-link-container">
                     <a class="h1 mobile-nav-link" href="/index.html">Intro</a>
-                    <a class="h1 mobile-nav-link" href="/index.html#portfolio">Portfolio</a>
+                    <a id="mobile-portfolio-link" class="h1 mobile-nav-link" href="/index.html#portfolio">Portfolio</a>
                     <a class="h1 mobile-nav-link" href="/about.html">About</a>
                     <a class="h1 mobile-nav-link" href="/contact.html">Contact</a>
                 </div>
