@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobilePortfolioLink.addEventListener('click', () => {
         hamburgerBtn.classList.toggle('toggled');
         document.getElementById('mobile-nav').classList.toggle('open');
-        document.querySelector('html').classList.toggle('mobile-nav-open');
+        document.querySelector('html').classList.toggle('mobile-nav-open'); 
     })
 
     //hide header on scroll
