@@ -1,4 +1,4 @@
-# Deplyad på: https://emilavara.github.io/
+# Deployad på: https://emilavara.github.io/
 
 ***
 # Instruktioner
@@ -34,14 +34,32 @@ När hämtningen av projekten sker ska det finnas information om att projekten h
 * Validerad med 0 fel på https://validator.w3.org
 * Inga errors i Console
 
-### Sammantfattning av projekt + teoretiska frågor
+### Sammanfattning av projekt + teoretiska frågor
 
-1. Du sammanfattar ditt projekt i README.md och reflekterar kring styrkor och ev brister. Max 500 ord.
-2. Du svarar på dessa frågor (max 800 ord):
+Jag har valt att skriva u02 helt från grunden. Jag hade en skiss för min portfolio som låg liggandes. Så jag tänkte att detta var ett ypperligt tillfälle att göra en (även om jag hellre använt mitt kära Vue).  
 
-Vad kan man utveckla m.h.a av Javascript inom frontend?
+Jag använde en multi-page lösning för detta projekt. Sidorna är indelade i en intro sida, som håller lite länkar och min portfolio. Sedan en allmän “om” sida, och en kontakt sida.
+
+Jag har använt GitHubs API för att hämta och displaya mina repos som finns där. Jag har även valt att visa några projekt som inte finns på GitHub. Detta löste jag genom att ha en statisk lokal array med projekt som inte finns på GitHub, sedan så populerar jag mina repos in till denna array.
+
+Fetching och rendering sker async, så render funktionen körs inte förens fetch-funktionen är färdig.
+
+Jag har också en lokal .json fil för mitt CV, denna laddas in på “Om-sidan" och renderar ut utbildningar och tjänster jag har haft.
+Jag har också använt ett av mina favorit bibliotek, Lenis för “smooth scrolling”. Jag har även använt @view-transitions. Något relativt nytt, och stöds bara i Chrome för tillfället. Men den tillåter att spela animationer mellan page transitions.
+
+Jag har även använt mig av vanilla Web Components för header, mobile navigation och footer. Allt de gör egenligen är att injicera HTML, detta för att undvika repetition, och för att göra HTML lite mer klena.
+
+I övrigt är jag relativt nöjd med resultatet, kanske lite överambitiöst. Videosarna för portfolio tumnagelbilderna tog alldeles för lång tid för att vara värd mödan.
+
+Vad kan man utveckla m.h.a Javascript inom frontend?
+JavaScript kan användas för att bygga i stort sett vad som helst. JavaScript är ett av de viktigaste språken inom frontendutveckling och används för att skapa dynamiska och interaktiva webbsidor. Det gör det möjligt att skapa funktioner som reagerar baserat på användarens actions, manipulera sidans struktur och styles i realtid, men också för att integrera data från externa ställen. JavaScript används också för att bygga avancerade applikationer som SPAs, där sidan uppdateras utan att laddas om, vilket förbättrar användarupplevelsen.
+
 Vad är JSON och hur används det inom frontend?
+JSON, som står för JavaScript Object Notation, är ett textbaserat format som används för att lagra och överföra data. Det är lättläst, både för människor och datorer, och fungerar som standard för datautbyte mellan klient och server. Inom frontendutveckling används JSON främst för att hämta och skicka data via API:er. Det är också användbart för att lagra information lokalt i webbläsaren eller som en del av config-filer i projekt. JSON:s simplicitet och kompatibilitet gör det till ett bra verktyg för att hantera data effektivt inom webbutveckling.
+
 Vad är HTTP och varför bör man som frontendutvecklare ha kunskap om det och dess protokoll?
+HTTP, som står för HyperText Transfer Protocol, är protokollet som möjliggör dataöverföring mellan klienter och servrar och är en grundläggande del av webben. Det fungerar genom en “begäran-svar-modell” där klienten requestar resurser och servern svarar med innehåll eller felmeddelanden. Frontendutvecklare behöver förstå HTTP-metoder som GET och POST, vilka används för att hämta och skicka data. Dessutom är kunskap om HTTP-statuskoder, som indikerar resultatet av en request, viktig för att felsöa och hantera fel.
+Förståelse för HTTP-headers är också avgörande, eftersom de innehåller metadata om requesten och svart man får, vilket påverkar allt från säkerhet till caching. Caching, till exempel, förbättrar prestanda genom att minska antalet serverförfrågningar. Vidare är kunskap om HTTPS, den säkrare varianten av HTTP, egentligen viktig för att skydda en användas data och säkerställa att webbapplikationer uppfyller moderna säkerhetskrav.
 
 
 ## Kriterier för bedömning
