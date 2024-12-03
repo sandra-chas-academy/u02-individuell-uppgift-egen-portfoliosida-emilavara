@@ -1,0 +1,61 @@
+.ea-btn {
+    all: unset;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.75rem 0.75rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    width: fit-content;
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+        border-radius: 1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    &.primary {
+        background-color: var(--btn-primary);
+        transition: background-color 0.1s ease, color 0.1s ease;
+
+        &:hover {
+            color: black;
+            background-color: white;
+        }
+    }
+
+    &.no-bg {
+        background: transparent;
+    }
+
+    &.small {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+.social-btn {
+    display: block;
+    height: 2.25rem;
+    width: 2.25rem;
+    border: 1px solid var(--dashed-border-color);
+    border-radius: 0.75rem;
+    font-size: 1.25rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+
+    &:hover {
+        background: white;
+        color: black;
+        border: 1px solid transparent;
+    }
+}
+
+.contact-btn-desktop {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}

@@ -1,0 +1,31 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-color);
+    border-top: 1px dashed var(--dashed-border-color);
+
+
+    .date {
+        display: none;
+    }
+
+    p {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    @media (min-width: 768px) {
+        padding: 0 calc(50vw - 42.75rem);
+        
+
+        .date {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@keyframes verticalLines {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 100dvh;
+    }
+}
+
+@keyframes blur {
+    from {
+        backdrop-filter: blur(16px);
+    }
+    
+    to {
+        backdrop-filter: blur(0px);
+    }
+}

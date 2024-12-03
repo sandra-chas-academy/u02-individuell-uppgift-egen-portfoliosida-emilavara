@@ -1,0 +1,12 @@
+:root {
+    /* colors */
+    --bg-color: #0a0a0a;
+    --dashed-border-color: #181818;
+
+    --btn-primary: #151515;
+
+    --text-accent: #454545;
+    --body-text-color: #848484;
+
+    overscroll-behavior: none;
+}

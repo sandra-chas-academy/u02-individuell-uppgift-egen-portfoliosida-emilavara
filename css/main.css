@@ -1,0 +1,98 @@
+@import "./fonts.css";
+@import "./variables.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./buttons.css";
+@import "./animations.css";
+@import "./ea-grid.css";
+@import "./utilities.css";
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-color);
+    scroll-behavior: smooth;
+
+    font-size: 16px;
+
+    @media (min-width: 1920px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 1464px) {
+        font-size: 1.09vw;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: "Inter Display";
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    color: white;
+    position: relative;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.mobile-nav-open {
+    overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+@keyframes move-out {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(15%);
+    }
+}
+
+@keyframes move-in {
+    0% {
+        transform: translateY(15%);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+::view-transition-old(root) {
+    animation: 0.75s ease both move-out;
+}
+
+::view-transition-new(root) {
+    animation: 0.75s ease both move-in;
+}
